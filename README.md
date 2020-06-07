@@ -77,4 +77,4 @@ As the Angular way, all the application files are in `src/app` folder, with the 
 - Sample image gallery to choose a product image
 - Image loading placeholder to keep the UI consistent
 
-# Working example at:
+# Working example: [here](https://angularsm.surge.sh/)
