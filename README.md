@@ -78,3 +78,4 @@ As the Angular way, all the application files are in `src/app` folder, with the 
 - Image loading placeholder to keep the UI consistent
 
 # Working example: [here](https://angularsm.surge.sh/)
+**NOTE: due some surge(host) limitations, page reload maybe fails, to refresh page, test using the local server with `npm start` command.**
