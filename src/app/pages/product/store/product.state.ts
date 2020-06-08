@@ -3,7 +3,7 @@ import { Product } from '../models/product';
 export interface ProductState {
   products: Product[];
   selectedProduct: Product;
-  error?: any;
+  error: string | null;
 }
 
 export const initialProductState: ProductState = {

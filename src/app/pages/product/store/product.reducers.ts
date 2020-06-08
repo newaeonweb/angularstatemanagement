@@ -11,14 +11,14 @@ export const reducers = createReducer(
     return {
       ...state,
       products: action.products,
+      error: null,
     };
   }),
 
   on(ProductActions.loadProductsFailure, (state, action) => {
     return {
       ...state,
-      products: state.products,
-      error: action.error,
+      error: action.error.message,
     };
   }),
 
@@ -26,13 +26,13 @@ export const reducers = createReducer(
     return {
       ...state,
       selectedProduct: action.selectedProduct,
+      error: null,
     };
   }),
 
   on(ProductActions.loadOneProductFailure, (state, action) => {
     return {
       ...state,
-      products: null,
       error: action.error,
     };
   }),
@@ -40,6 +40,7 @@ export const reducers = createReducer(
   on(ProductActions.addProductSuccess, (state, action) => {
     return Object.assign({}, state, {
       products: [...state.products, action.product],
+      error: null,
     });
   }),
 

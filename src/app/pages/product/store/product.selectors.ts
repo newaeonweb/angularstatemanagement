@@ -14,3 +14,8 @@ export const selectOneProduct = createSelector(
   selectProductsFeature,
   (state: ProductState) => state.selectedProduct
 );
+
+export const selectErrorProduct = createSelector(
+  selectProductsFeature,
+  (state: ProductState) => state.error
+);

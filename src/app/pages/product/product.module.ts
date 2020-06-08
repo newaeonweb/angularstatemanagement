@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromProductState from './store/product.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './store/product.effects';
+import { ToastMessagesComponent } from './components/toast-messages/toast-messages.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProductEffects } from './store/product.effects';
     FormComponent,
     NavComponent,
     ProductAddComponent,
+    ToastMessagesComponent,
   ],
   imports: [
     CommonModule,

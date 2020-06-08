@@ -13,6 +13,7 @@ Just run `spm start` for a dev server. Navigate to `http://localhost:4200/`.
 As the Angular way, all the application files are in `src/app` folder, with the following content (using the feature module pattern):
 
 ```
+.
 |____app-routing.module.ts
 |____app.component.html
 |____app.component.scss
@@ -38,6 +39,8 @@ As the Angular way, all the application files are in `src/app` folder, with the 
 | | | | |____form.component.ts
 | | | |____nav
 | | | | |____nav.component.ts
+| | | |____toast-messages
+| | | | |____toast-messages.component.ts
 | | |____models
 | | | |____product.ts
 | | | |____productHttpRequest.ts
@@ -77,5 +80,5 @@ As the Angular way, all the application files are in `src/app` folder, with the 
 - Sample image gallery to choose a product image
 - Image loading placeholder to keep the UI consistent
 
-# Working example: [here](https://angularsm.surge.sh/)
-**NOTE: due some surge(host) limitations, page reload maybe fails, to refresh page, test using the local server with `npm start` command.**
+# Working example: [here](https://angularstatemanagement.now.sh/)
+Continuous Deployment using **now.sh**

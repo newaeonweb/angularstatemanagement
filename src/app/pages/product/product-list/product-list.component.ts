@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { Store, select } from '@ngrx/store';
-import { selectProductsList } from '../store/product.selectors';
+import {
+  selectProductsList,
+  selectErrorProduct,
+} from '../store/product.selectors';
 import { ProductState } from '../store/product.state';
 import * as fromActions from '../../product/store/product.actions';
 
@@ -12,7 +15,6 @@ import * as fromActions from '../../product/store/product.actions';
     <ng-container>
       <ng-template #loading>
         <div class="text-center">
-          <p>Loading...</p>
           <div>
             <img
               src="https://media.giphy.com/media/feN0YJbVs0fwA/giphy.gif"
@@ -22,6 +24,10 @@ import * as fromActions from '../../product/store/product.actions';
         </div>
       </ng-template>
       <ngr-product-nav type="list"></ngr-product-nav>
+      <ngr-toast-messages
+        [error$]="error$"
+        [type]="'text-error'"
+      ></ngr-toast-messages>
       <div class="row" *ngIf="products$ | async as products; else loading">
         <div *ngFor="let product of products" class="col-12 col-4-md col-4-lg">
           <div class="card">
@@ -60,6 +66,7 @@ import * as fromActions from '../../product/store/product.actions';
 })
 export class ProductListComponent implements OnInit {
   products$: Observable<Product[]>;
+  error$ = this.store.pipe(select(selectErrorProduct));
 
   constructor(private store: Store<ProductState>) {}
 
